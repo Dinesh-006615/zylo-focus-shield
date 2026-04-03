@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Eye, Clock, Flame, Zap, TrendingUp, AlertTriangle } from "lucide-react";
+import { Eye, Clock, Flame, Zap, TrendingUp, AlertTriangle, BarChart3, Shield } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 import { getTodayUsage, getAllUsage, getAddictionScore, getSmartNudge, getFocusSession } from "@/lib/store";
 import { useEffect, useState } from "react";
