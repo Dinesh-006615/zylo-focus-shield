@@ -1,7 +1,8 @@
-import { Shield, MessageCircle, X } from "lucide-react";
+import { MessageCircle, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { getFocusSession } from "@/lib/store";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
 
 export default function BlockOverlay() {
   const navigate = useNavigate();
@@ -31,8 +32,8 @@ export default function BlockOverlay() {
       <div className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full bg-secondary/10 blur-[80px]" />
 
       <div className="relative z-10 text-center" style={{ animation: "slide-up 0.5s ease-out" }}>
-        <div className="w-20 h-20 rounded-full gradient-primary flex items-center justify-center mx-auto mb-6 animate-pulse-glow">
-          <Shield size={36} className="text-primary-foreground" />
+        <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse-glow">
+          <img src={logo} alt="Antigram" className="w-16 h-16 object-contain" />
         </div>
 
         <h1 className="text-3xl font-bold mb-2">Focus Mode Active</h1>

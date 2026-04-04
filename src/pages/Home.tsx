@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Eye, Clock, Flame, Zap, TrendingUp, AlertTriangle, BarChart3, Shield } from "lucide-react";
+import { Eye, Clock, Flame, TrendingUp, AlertTriangle, BarChart3, Shield } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 import { getTodayUsage, getAllUsage, getAddictionScore, getSmartNudge, getFocusSession } from "@/lib/store";
 import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
+import logo from "@/assets/logo.png";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -44,17 +45,17 @@ export default function Home() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6" style={{ animation: "slide-up 0.3s ease-out" }}>
         <div>
-          <h1 className="text-2xl font-bold gradient-text">Zylo</h1>
+          <h1 className="text-2xl font-bold gradient-text">Antigram</h1>
           <p className="text-sm text-muted-foreground">Take control of your time</p>
         </div>
-        <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center animate-pulse-glow">
-          <Zap size={18} className="text-primary-foreground" />
+        <div className="w-10 h-10 rounded-full flex items-center justify-center animate-pulse-glow">
+          <img src={logo} alt="Antigram" className="w-8 h-8 object-contain" />
         </div>
       </div>
 
       {/* Smart Nudge */}
       <GlassCard className="mb-4 flex items-center gap-3 border-l-2 border-l-primary" glow>
-        <AlertTriangle size={18} className="text-secondary shrink-0" />
+        <AlertTriangle size={18} className="text-primary shrink-0" />
         <p className="text-sm text-muted-foreground">{nudge}</p>
       </GlassCard>
 
@@ -99,15 +100,15 @@ export default function Home() {
       <GlassCard className="mb-4" style={{ animation: "slide-up 0.5s ease-out" }}>
         <div className="flex items-center justify-between mb-3">
           <p className="text-sm font-semibold">Weekly Overview</p>
-          <TrendingUp size={16} className="text-accent" />
+          <TrendingUp size={16} className="text-primary" />
         </div>
         <ResponsiveContainer width="100%" height={140}>
           <BarChart data={chartData}>
-            <XAxis dataKey="day" tick={{ fill: "hsl(240 5% 55%)", fontSize: 10 }} axisLine={false} tickLine={false} />
+            <XAxis dataKey="day" tick={{ fill: "hsl(0 0% 50%)", fontSize: 10 }} axisLine={false} tickLine={false} />
             <YAxis hide />
             <Tooltip
               contentStyle={{
-                background: "hsl(240 15% 8% / 0.9)",
+                background: "hsl(0 0% 7% / 0.9)",
                 border: "1px solid hsl(0 0% 100% / 0.1)",
                 borderRadius: "12px",
                 color: "hsl(0 0% 95%)",
@@ -117,8 +118,8 @@ export default function Home() {
             <Bar dataKey="opens" fill="url(#gradient)" radius={[6, 6, 0, 0]} />
             <defs>
               <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="hsl(270, 80%, 60%)" />
-                <stop offset="100%" stopColor="hsl(320, 70%, 55%)" />
+                <stop offset="0%" stopColor="hsl(0, 75%, 50%)" />
+                <stop offset="100%" stopColor="hsl(0, 60%, 35%)" />
               </linearGradient>
             </defs>
           </BarChart>
@@ -128,7 +129,7 @@ export default function Home() {
       {/* Quick Actions */}
       <div className="grid grid-cols-2 gap-3" style={{ animation: "slide-up 0.6s ease-out" }}>
         <GlassCard onClick={() => navigate("/analytics")} className="text-center">
-          <BarChart3 size={22} className="text-accent mx-auto mb-2" />
+          <BarChart3 size={22} className="text-primary mx-auto mb-2" />
           <p className="text-sm font-medium">Analytics</p>
         </GlassCard>
         <GlassCard onClick={() => navigate("/focus")} className="text-center">

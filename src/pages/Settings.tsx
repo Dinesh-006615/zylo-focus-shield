@@ -24,7 +24,7 @@ export default function Settings() {
       title: "Data",
       items: [
         { icon: Trash2, label: "Clear Data", desc: "Reset all usage stats", status: "", action: () => { localStorage.clear(); window.location.reload(); } },
-        { icon: Info, label: "About Zylo", desc: "Version 1.0.0 — Hackathon Demo", status: "" },
+        { icon: Info, label: "About Antigram", desc: "Version 1.0.0 — Hackathon Demo", status: "" },
       ],
     },
   ];
