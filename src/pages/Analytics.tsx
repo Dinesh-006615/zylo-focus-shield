@@ -51,12 +51,12 @@ export default function Analytics() {
           <p className="text-[10px] text-muted-foreground">Time Today</p>
         </GlassCard>
         <GlassCard>
-          <Film size={16} className="text-accent mb-1" />
+          <Film size={16} className="text-primary mb-1" />
           <p className="text-xl font-bold">{totalReelAttempts}</p>
           <p className="text-[10px] text-muted-foreground">Reel Attempts (7d)</p>
         </GlassCard>
         <GlassCard>
-          <Zap size={16} className="text-yellow-400 mb-1" />
+          <Zap size={16} className="text-primary mb-1" />
           <p className="text-xl font-bold">{getMostAddictiveHour()}</p>
           <p className="text-[10px] text-muted-foreground">Peak Hour</p>
         </GlassCard>
@@ -69,21 +69,21 @@ export default function Analytics() {
           {trend ? (
             <span className="flex items-center gap-1 text-xs text-accent"><TrendingDown size={14} /> Improving</span>
           ) : (
-            <span className="flex items-center gap-1 text-xs text-secondary"><TrendingUp size={14} /> Rising</span>
+            <span className="flex items-center gap-1 text-xs text-primary"><TrendingUp size={14} /> Rising</span>
           )}
         </div>
         <ResponsiveContainer width="100%" height={140}>
           <AreaChart data={opensData}>
             <defs>
               <linearGradient id="opensGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="hsl(270, 80%, 60%)" stopOpacity={0.4} />
-                <stop offset="100%" stopColor="hsl(270, 80%, 60%)" stopOpacity={0} />
+                <stop offset="0%" stopColor="hsl(0, 75%, 50%)" stopOpacity={0.4} />
+                <stop offset="100%" stopColor="hsl(0, 75%, 50%)" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <XAxis dataKey="day" tick={{ fill: "hsl(240 5% 55%)", fontSize: 10 }} axisLine={false} tickLine={false} />
+            <XAxis dataKey="day" tick={{ fill: "hsl(0 0% 50%)", fontSize: 10 }} axisLine={false} tickLine={false} />
             <YAxis hide />
-            <Tooltip contentStyle={{ background: "hsl(240 15% 8% / 0.9)", border: "1px solid hsl(0 0% 100% / 0.1)", borderRadius: "12px", color: "hsl(0 0% 95%)", fontSize: 12 }} />
-            <Area type="monotone" dataKey="value" stroke="hsl(270, 80%, 60%)" fill="url(#opensGrad)" strokeWidth={2} />
+            <Tooltip contentStyle={{ background: "hsl(0 0% 7% / 0.9)", border: "1px solid hsl(0 0% 100% / 0.1)", borderRadius: "12px", color: "hsl(0 0% 95%)", fontSize: 12 }} />
+            <Area type="monotone" dataKey="value" stroke="hsl(0, 75%, 50%)" fill="url(#opensGrad)" strokeWidth={2} />
           </AreaChart>
         </ResponsiveContainer>
       </GlassCard>
@@ -93,14 +93,14 @@ export default function Analytics() {
         <p className="text-sm font-semibold mb-3">Time Spent (min)</p>
         <ResponsiveContainer width="100%" height={120}>
           <BarChart data={timeData}>
-            <XAxis dataKey="day" tick={{ fill: "hsl(240 5% 55%)", fontSize: 10 }} axisLine={false} tickLine={false} />
+            <XAxis dataKey="day" tick={{ fill: "hsl(0 0% 50%)", fontSize: 10 }} axisLine={false} tickLine={false} />
             <YAxis hide />
-            <Tooltip contentStyle={{ background: "hsl(240 15% 8% / 0.9)", border: "1px solid hsl(0 0% 100% / 0.1)", borderRadius: "12px", color: "hsl(0 0% 95%)", fontSize: 12 }} />
+            <Tooltip contentStyle={{ background: "hsl(0 0% 7% / 0.9)", border: "1px solid hsl(0 0% 100% / 0.1)", borderRadius: "12px", color: "hsl(0 0% 95%)", fontSize: 12 }} />
             <Bar dataKey="value" fill="url(#timeGrad)" radius={[6, 6, 0, 0]} />
             <defs>
               <linearGradient id="timeGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="hsl(320, 70%, 55%)" />
-                <stop offset="100%" stopColor="hsl(190, 80%, 50%)" />
+                <stop offset="0%" stopColor="hsl(0, 75%, 50%)" />
+                <stop offset="100%" stopColor="hsl(0, 60%, 35%)" />
               </linearGradient>
             </defs>
           </BarChart>
